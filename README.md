@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3119192-68b3-4238-b429-c036026aa4dc/deploy-status)](https://app.netlify.com/sites/emailinputv2/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
