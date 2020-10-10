@@ -71,6 +71,13 @@ function App() {
         setDomainIdx(tempIdx);
         e.preventDefault();
         break;
+      case 39:
+        const pos = e.target.selectionEnd;
+        if (pos === currentInput.length) {
+          let tempVal = currentInput + recommendedDomains[domainIdx];
+          handleChange({ target: { value: tempVal } });
+        }
+        break;
       case 40:
         tempIdx =
           domainIdx === 0 ? recommendedDomains.length - 1 : domainIdx - 1;
@@ -87,10 +94,10 @@ function App() {
       const userDomain = newInput.includes("@")
         ? newInput.substring(newInput.indexOf("@"))
         : "";
-      let tempDomains = DOMAINS.filter((dom) =>
-        dom.startsWith(userDomain)
-      ).map((dom) => dom.replace(userDomain, ""));
-      setGreyedOutText(userDomain);
+      let tempDomains = DOMAINS.filter((dom) => dom.startsWith(userDomain))
+        .map((dom) => dom.replace(userDomain, ""))
+        .filter((d) => d !== "");
+      setGreyedOutText(tempDomains.length > 0 ? userDomain : "");
       setRecommendedDomains(tempDomains);
       setDomainIdx(0);
     }
@@ -107,7 +114,7 @@ function App() {
           <InputAdornment position="end">
             {<span style={{ color: "lightgray" }}>{greyedOutText}</span>}
             {recommendedDomains[domainIdx]}
-            {recommendedDomains[domainIdx] && (
+            {recommendedDomains[domainIdx] && recommendedDomains.length > 1 && (
               <FontAwesomeIcon
                 style={{ marginLeft: "5px" }}
                 icon={faArrowsAltV}
