@@ -7,16 +7,18 @@ import { faArrowsAltV } from "@fortawesome/free-solid-svg-icons";
 
 const DOMAINS = [
   /* Default domains included */
+  "@gmail.com",
+  "@hotmail.com",
   "@hey.com",
+  "@yahoo.com",
+  "@protonmail.com",
   "@aol.com",
   "@att.net",
   "@comcast.net",
   "@facebook.com",
-  "@gmail.com",
   "@gmx.com",
   "@googlemail.com",
   "@google.com",
-  "@hotmail.com",
   "@hotmail.co.uk",
   "@mac.com",
   "@me.com",
@@ -25,7 +27,6 @@ const DOMAINS = [
   "@live.com",
   "@sbcglobal.net",
   "@verizon.net",
-  "@yahoo.com",
   "@yahoo.co.uk",
 
   /* Other global domains */
@@ -43,7 +44,6 @@ const DOMAINS = [
   "@outlook.com",
   "@pobox.com",
   "@protonmail.ch",
-  "@protonmail.com",
   "@tutanota.de",
   "@tutanota.com",
   "@tutamail.com",
