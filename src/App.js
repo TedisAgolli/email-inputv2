@@ -66,19 +66,22 @@ function App() {
     let tempIdx;
     switch (e.keyCode) {
       case 38:
+        // up
         tempIdx =
           domainIdx === recommendedDomains.length - 1 ? 0 : domainIdx + 1;
         setDomainIdx(tempIdx);
         e.preventDefault();
         break;
       case 39:
+        // right
         const pos = e.target.selectionEnd;
-        if (pos === currentInput.length) {
+        if (pos === currentInput.length && recommendedDomains[domainIdx]) {
           let tempVal = currentInput + recommendedDomains[domainIdx];
           handleChange({ target: { value: tempVal } });
         }
         break;
       case 40:
+        // down
         tempIdx =
           domainIdx === 0 ? recommendedDomains.length - 1 : domainIdx - 1;
         setDomainIdx(tempIdx);
